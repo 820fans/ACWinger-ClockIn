@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "queue": "cpp",
+        "cstdio": "cpp",
+        "string": "cpp",
+        "cstdlib": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    },
+    "editor.quickSuggestionsDelay": 3
+}
