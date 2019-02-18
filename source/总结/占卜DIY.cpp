@@ -1,3 +1,6 @@
+
+//这里填你的代码^^
+//注意代码要放在两组三个点之间，才可以正确显示代码高亮哦~
 #include<bits/stdc++.h>
 #include<list>
 using namespace std;
@@ -27,18 +30,11 @@ int main(){
         heaps[13].pop_front();
         
         while(card != 13) { // loop operation before 'K' appear
-            // put card to the front of heaps[card]
-            heaps[card].push_front(card);
-            // for(auto i: heaps[card])
-            // cout<<i<<" ";
-            // cout<<endl;
-            // break;
-            // number of up in heaps[card]+1
-            // draw from back
-            card = heaps[card].back();
-            heaps[card].pop_back();
-            ucnt[card]++;
-            // if(ucnt[card]==4) break; // no card to draw
+            int t = card;
+            ucnt[t]++;     // increase card
+            card = heaps[t].back();
+            // heaps[card].pop_back(); // 这里card已经被更新了！！！
+            heaps[t].pop_back(); // 弹出的应该是之前的card=t
         }
         life--; // die if card = 'K'
     }
