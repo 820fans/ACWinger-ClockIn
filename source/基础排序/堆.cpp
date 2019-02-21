@@ -11,7 +11,7 @@ void push_down(int u, int size){
         swap(a[t], a[u]);
         push_down(t, size);
     }
-}
+} 
 
 void push_up(int u){
     while(u/2 && a[u/2] < a[u]){
