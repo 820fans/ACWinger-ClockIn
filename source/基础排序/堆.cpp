@@ -29,12 +29,23 @@ int get(){
     return a[1];
 }
 
+void push_down(int u, int size){
+    int t=u, l=u*2, r=u*2+1;
+    if(l<=size && a[l]>a[t]) t=l;
+    if(r<=size && a[r]>a[t]) t=r;
+    if(t!=u){
+        swap(a[t], a[u]);
+        push_down(t, size);
+    }
+}
+
 int main(){
     int n;
     cin>>n;
     for(int i=1;i<=n;i++) cin>>a[i];
 
     int size = n;
+
     for(int i=1;i<=n;i++) push_up(i);
     for(int i=1;i<=n;i++){
         swap(a[1], a[size--]);
